@@ -1,7 +1,6 @@
 /* AquaRev Water — Turtle Bay Case Study Stylesheet
  * Source: https://github.com/jeffatley-web/turtlebay
  * All global rules scoped to .aquarev-case-study so it can safely co-exist with Webflow site styles.
- * Both standalone (index.html) and embed (webflow-embed.html) wrap content in .aquarev-case-study.
  */
 
 :root {
@@ -959,4 +958,27 @@
     .aquarev-case-study { background: #fff; }
     .doc { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
     .section, .testimonial, .esg, .cta { page-break-inside: avoid; }
+  }
+
+  /* === WEBFLOW HOST OVERRIDES ===
+   * Webflow's site CSS at aquarevwater.us defines .section, .contact, .icon classes
+   * that would otherwise clobber our case study. Prefix with .aquarev-case-study to
+   * raise specificity (0,2,0) above Webflow's (0,1,0) and reset their visual props. */
+  .aquarev-case-study .section {
+    background: transparent;
+    background-image: none;
+    background-color: transparent;
+    padding: 56px 56px;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  .aquarev-case-study .section.tight {
+    padding: 40px 56px;
+  }
+  .aquarev-case-study .icon {
+    color: inherit;
+  }
+  .aquarev-case-study .contact {
+    background: transparent;
+    background-color: transparent;
   }
