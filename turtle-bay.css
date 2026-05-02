@@ -1,6 +1,7 @@
 /* AquaRev Water — Turtle Bay Case Study Stylesheet
  * Source: https://github.com/jeffatley-web/turtlebay
- * Hosted via GitHub Pages → loaded by both the standalone preview and the Webflow embed
+ * All global rules scoped to .aquarev-case-study so it can safely co-exist with Webflow site styles.
+ * Both standalone (index.html) and embed (webflow-embed.html) wrap content in .aquarev-case-study.
  */
 
 :root {
@@ -19,9 +20,9 @@
     --card: #FFFFFF;
     --gold: #B89B5E;
   }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body {
+  .aquarev-case-study, .aquarev-case-study * { box-sizing: border-box; }
+  .aquarev-case-study { margin: 0; padding: 0; }
+  .aquarev-case-study {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     background: #040f1e;
     color: var(--ink);
@@ -955,7 +956,7 @@
   .method ul li { margin: 6px 0; font-size: 13px; color: #3a4452; }
 
   @media print {
-    body { background: #fff; }
+    .aquarev-case-study { background: #fff; }
     .doc { box-shadow: none; margin: 0; max-width: 100%; border-radius: 0; }
     .section, .testimonial, .esg, .cta { page-break-inside: avoid; }
   }
